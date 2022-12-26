@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubedoc-test
+  namespace: personal-projects
+spec:
+  selector: 
+    matchLabels:
+        app: kubedoc-test
+  replicas: 1
+  template:
+    metadata: 
+        name: kubedoc-test
+        namespace: personal-projects
+        labels:
+            app: kubedoc-test
+    spec:
+      containers:
+        - name: kubedoc-test
+          image: kubedoc-test:latest
+          imagePullPolicy: Never   
+          ports:
+            - containerPort: 3000
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+              cpu: 500m
+              memory: 600Mi
+          env:
+            - name: PORT
+              value: "3000"
+            - name: NODE_ENV
+              value: "prod"

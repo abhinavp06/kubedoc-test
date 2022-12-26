@@ -1,0 +1,30 @@
+replicaCount: 1
+port: 3000
+image: kubedoc-test
+
+serviceName: kubedoc-test
+releaseName: kubedoc-test
+
+imageName: kubedoc-test
+namespace: personal-projects
+label: kubedoc-test
+TargetPort: 3000
+containerName: kubedoc-test
+containerPort: 3000
+ServicePort: 80
+name: kubedoc-test
+podName: kubedoc-test
+
+APP:
+  PORT: 3000
+  NODE_ENV: prod
+  KUBEDOC_TEST_BASE_URL: http://kubedoc-test
+  HELLO_CRONJOB: hello-cronjob
+
+resources:
+  requests:
+    cpu: 400m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 600Mi
