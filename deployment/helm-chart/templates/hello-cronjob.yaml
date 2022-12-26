@@ -1,8 +1,8 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: hello-cronjob
-  namespace: personal-projects
+  name: {{ .Values.APP.HELLO_CRONJOB }}
+  namespace: {{ .Values.namespace }}
 spec:
   schedule: '* * * * *'
   jobTemplate:
@@ -10,14 +10,14 @@ spec:
       template:
         spec:
           containers:
-            - name: hello-cronjob
+            - name: {{ .Values.APP.HELLO_CRONJOB }}
               image: curlimages/curl
               imagePullPolicy: Always
               command:
                 [
                   '/bin/sh',
                   '-c',
-                  'curl --insecure  -X GET http://kubedoc-test.personal-projects/hello'
+                  'curl --insecure  -X GET {{ .Values.APP.KUBEDOC_TEST_BASE_URL }}/hello'
                 ]
           restartPolicy: OnFailure
   successfulJobsHistoryLimit: 1
