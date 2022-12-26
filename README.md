@@ -11,16 +11,17 @@ $ npm install
 
 ## Running the app
 
-   NOTE : You need to have Docker Desktop (and enable K8s) 
+   NOTE : You need to have Docker Desktop (enable K8s) and helm
 
 ```bash
 $ docker build -t kubedoc-test .
 
-$ kubectl apply -f ./deployment/deployment.yaml 
+$ helm install  kubedoc-test ./deployment/helm-chart 
+```
 
-$ kubectl apply -f ./deployment/service.yaml      
-
-$ kubectl apply -f ./deployment/hello-cronjob.yaml
+## Deleting the app
+```bash
+$ helm uninstall kubedoc-test 
 ```
 
 ## Stay in touch
