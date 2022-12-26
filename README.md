@@ -1,20 +1,28 @@
+## Description
+
 Run a microservice with K8s and Docker on your system.
 
-NOTE: You need to have Docker Desktop and enable K8s
+## Installation
 
-STEPS:
-    - Clone this repository
-    - Switch to 'master'
-    - npm i
-    - Now run the following commands:
-        ```
+```bash
+# checkout to 'master'
+$ npm install
+```
 
-        docker build -t kubedoc-test .
+## Running the app
 
-        kubectl apply -f ./deployment/deployment.yaml 
+   NOTE : You need to have Docker Desktop (and enable K8s) 
 
-        kubectl apply -f ./deployment/service.yaml      
+```bash
+$ docker build -t kubedoc-test .
 
-        kubectl apply -f ./deployment/hello-cronjob.yaml
+$ kubectl apply -f ./deployment/deployment.yaml 
 
-Connect with me : [Abhinav Parashar](https://www.linkedin.com/in/abhinavp06/)
+$ kubectl apply -f ./deployment/service.yaml      
+
+$ kubectl apply -f ./deployment/hello-cronjob.yaml
+```
+
+## Stay in touch
+
+**LinkedIn:**  [Abhinav Parashar](https://www.linkedin.com/in/abhinavp06/)
