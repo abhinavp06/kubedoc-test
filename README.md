@@ -19,6 +19,11 @@ $ docker build -t kubedoc-test .
 $ helm install  kubedoc-test ./deployment/helm-chart 
 ```
 
+## Deleting the app
+```bash
+$ helm uninstall kubedoc-test 
+```
+
 ## Stay in touch
 
 **LinkedIn:**  [Abhinav Parashar](https://www.linkedin.com/in/abhinavp06/)
